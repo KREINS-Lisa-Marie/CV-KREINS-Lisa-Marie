@@ -8,6 +8,7 @@
     <meta name="description" content="Une page CV de Lisa-Marie Kreins">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script defer type="module" src="js/main.js"></script>
     <title>Lisa-Marie Kreins</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
 <!--    srcSet pour images -->
 <!-- ENLEVER les BR!!! -->
 <!-- images bizarres pixellisées!!! -->
-<header>
+<!--<header>
     <h1>
         <img src="./img/Logo petit.png" alt="Le Logo de la page Web Lisa-Marie Kreins" height="25" width="130">
     </h1>
@@ -25,7 +26,7 @@
             Navigation principale
         </h2>
 
-        <!-- A completer nav -->
+        &lt;!&ndash; A completer nav &ndash;&gt;
 
         <ul>
             <li>
@@ -77,7 +78,7 @@
         </ul>
     </nav>
     <div class="location-nav"><a href="#">Select location</a></div>
-</header>
+</header>-->
 <!-- à finir -->
 
 
@@ -88,10 +89,49 @@
     <h1>
         Web Designer
     </h1>
-    <section class="caroussel">
+    <section class="slideshow">
         <h2>
-            Slideshow
+            Slideshow <!-- noch richtig machen ! button sind nicht 100% richtig-->
         </h2>
+        <div class="caroussel">
+            <div class="carousel">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+
+                <div class="carousel-images">
+                    <div class="carousel-item">
+                        <img src="./img/loisirs.webp" alt="Loisirs de Lisa-Marie Kreins : voyager et peinture"
+                             width="297" height="489">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/Lisa-Marie.webp" alt="Image de Lisa-Marie Kreins" height="489" width="297">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/flagges-rouges.webp" width="297" height="489"
+                             alt="multilingue : français, allemand, néerlandais, anglais, luxembourgeois">
+                    </div>
+                </div>
+
+                <div class="carousel-nav">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
         <img src="./img/Lisa-Marie.webp" alt="Image de Lisa-Marie Kreins" height="489" width="297">
         <img src="./img/loisirs.webp" width="297" height="489" alt="Loisirs de Lisa-Marie Kreins : voyager et peinture " >
         <img src="./img/flagges-rouges.webp" width="297" height="489" alt="multilingue : français, allemand, néerlandais, anglais, luxembourgeois" >
@@ -99,7 +139,7 @@
     <section class="carousselbuttons">
         <button type="button" id="previous"></button>
         <button type="button" id="middle"></button>
-        <button type="button" id="next"></button>
+        <button type="button" id="next"></button>-->
     </section>
     <section id="moi">
         <h2>
@@ -230,6 +270,40 @@
     <p class="impressum">
         © 2024 Lisa-Marie Kreins. Tous droits réservés.
     </p>
+
+
+
+
+    <!--TEST-->
+    <input type="checkbox" checked id="navigation">
+    <ul class="navigation-list">
+        <li>
+            <h3> UN TEST</h3>
+            <a title="aller vers le site de la Haute Ecole de la Province de Liège" href="https://hepl.be/fr">Haute
+                Ecole de la Province de Liège</a>
+        </li>
+        <li>
+            <a title="aller vers le site du Bachelier en Design Web de la Haute Ecole de la Province de Liège"
+               href="https://hepl.be/fr/techniques-infographiques/web">Bachelier en Design Web</a>
+        </li>
+        <li>
+            <a title="aller vers le site de la Formation d'assistante pharmaceutico-technique"
+               href="https://www.provincedeliege.be/fr/node/2449">Formation assistante en pharmacie</a>
+        </li>
+        <li>
+            <a title="aller vers le site de IPES Verviers" href="https://fr-fr.facebook.com/IPESdeVerviers/">IPES
+                Verviers</a>
+        </li>
+        <li>
+            <a title="aller vers le site de Maria-Goretti Sekundarschule" href="https://www.maria-goretti.be/">Maria-Goretti
+                Sekundarschule</a>
+        </li>
+    </ul>
+    <!--TEST-->
+
+
+
+
 </footer>
 </body>
 </html>

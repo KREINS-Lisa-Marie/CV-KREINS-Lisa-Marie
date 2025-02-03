@@ -24,9 +24,9 @@ h1{
 p{
     font-size: 1em;
 }
-.caroussel{
+/*.caroussel{
     display: inline;
-}
+}*/
 section p:last-of-type {
     margin-bottom: 40px;
 }
@@ -48,8 +48,10 @@ h2{
     margin-bottom: 22px;
 }
 #moi, #monparcours{
+    position: relative;
     background-color: white;
     border-radius: 17px;
+    z-index: 3;
 }
 #langages a{
     height: 114px;
@@ -86,12 +88,20 @@ h2{
     margin: 0;
 }
 .backgroundimage:first-of-type{
-    position: absolute;
-    top: 1152px;
+/*    position: absolute;
+    top: 1152px;*/
+    position: relative;
+    margin-top: -59px;
+    z-index: 1;
 }
 .backgroundimage:last-of-type{
-    position: absolute;
-    top: 1842px;
+/*    position: absolute;
+    top: 1842px;*/
+
+    position: relative;
+    margin-top: -33px;
+    margin-bottom: 58px;
+    z-index: 1;
 }
 button[type="button"]{
     width: 18px;
@@ -117,11 +127,12 @@ button[type="button"]clicked{
     margin-bottom: 56px;
 }
 #moi{
-    margin-top: 62px;
+    margin-top: 146px;
+/*    position: relative;*/
 }
 #monparcours{
-    margin-top: 55px;
-    margin-bottom: 278px;
+    margin-top: 55.5px;
+/*    margin-bottom: 278px;*/
 }
 section li{
     margin-bottom: 34px;
@@ -230,4 +241,121 @@ img{
     font-size: 13px;
     font-weight: 400;
     padding-bottom: 78px;
+}
+
+#navigation:checked+.navigation-list{
+    display: none;
+}
+#navigation:not(:checked)+.navigation-list{
+    display: block;
+}
+
+
+
+
+
+
+/*TEST */
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+.caroussel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/*    height: 100vh;*/
+   /* background-color: #f4f4f4;*/
+}
+
+.carousel {
+    position: relative;
+    width: 90vw;
+    /* overflow: hidden; *//*
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 1 0 100%;
+    padding: 0 6px; /* padding entre les images*/
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Radio-Buttons verstecken */
+input[type="radio"] {
+    display: none;
+}
+
+/* Navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 23px;
+}
+
+.carousel-nav label {
+    width: 15px;
+    height: 15px;
+    background: #aaa;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-nav label:hover {
+    background: #666;
+}
+
+/* CSS Magie: Wechsel der Bilder durch Radio-Buttons */
+#slide1:checked ~ .carousel-images {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .carousel-images {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .carousel-images {
+    transform: translateX(-200%);
+}
+.slideshow{
+    margin-top: 23px;
+    padding-bottom: 0;
+}
+.slideshow h2{
+    position: absolute;
+    left: -999999px;
+}
+
+/* noch richtig machen */
+h1{
+    position: absolute;
+    top: 683px;
+    text-align: center;
+    width: 100vw;
+    font-size: 30px;
+    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;
+}
+
+
+.externlinks{
+    display: flex;
+    min-height: 139px;
+    min-width: 144px;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
