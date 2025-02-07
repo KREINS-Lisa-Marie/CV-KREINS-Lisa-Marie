@@ -1,22 +1,584 @@
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #EEEEEE;
+    --headergrey: #6C6C6C
+}
 
-footer a{
-    color: white;
-    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;
-    font-size: 14px;
-    line-height: 128%;
+/*--- Tout ----*/
+html{
+    font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif ;
+    font-size: 16px;
 }
+
+
+/*!*----Texte----*!*/
+h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+p{
+    font-size: 1em;
+}
+h2{
+    font-size: 29px; /*peut aussi mettre à 28 ou 30? sinon on voit pas vraiment de difference*/
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+.impressum{
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 78px;
+}
+a{
+    text-decoration: none;
+}
+
+/*----Footer----*/
+ footer a{
+     color: var(--white);
+     font-size: 14px;
+     line-height: 128%;
+ }
 footer{
-    background-color: black;
-    color: white;
-    padding-left: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    padding-left: 17px;
 }
-main a, header a{
-    color: black;
-    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;
+
+
+/*----header----*/
+ header{
+     background-color: var(--white);
+ }
+header{
+    max-height: 812px;      /* tu penses que c'est bon?*/
 }
-*{
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+header a{
+    color: var(--headergrey);
 }
+
+
+/*-----Body------*/
+ body{
+     background-color: var(--grey);
+ }
+
+
+/*----main----*/
+ main a{
+     color: var(--black);
+ }
+
+
+/*----Sections-----*/
+
+section p{
+    margin-bottom: 34px;
+    line-height: 23px;
+}
+
+/*-moi-*/
+#moi{
+    margin-top: 146px;        /*.    !!! a vérifier !!!! */
+    /*    position: relative;*/
+}
+section p:last-of-type {
+    margin-bottom: 40px;
+}
+
+/*-monparcours-*/
+
+#monparcours{
+    margin-top: 55px;
+    margin-bottom: -79px;   /*possible. mais !! supprimer sur image alors aussi*/
+}
+
+
+#monparcours h2{
+    margin-bottom: 37px;
+
+}
+#monparcours li{
+    line-height: 23px;
+    margin-bottom: 21px;
+}
+#monparcours li::before{
+    content: "-";
+    margin-right: 5px;
+}
+
+/*section li{                       /.   !!!!     à vérifier ùmais sinon peut être supprimé.   /
+    margin-bottom: 34px;
+    line-height: 23px;
+}*/
+
+main section{
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 32px 15px 33px 25px;
+}
+
+
+
+/*-plusieurs sections-*/
+
+ #moi, #monparcours{
+     position: relative; /* sinon pas possible de faire z-index */
+     background-color: var(--white);
+     border-radius: 17px;
+     z-index: 3;
+ }
+
+
+/*-competences-*/
+ #competences{
+     padding: 0;
+     margin-top: 65px;
+     text-align: center;
+ }
+#competences h2{
+    margin-bottom: 39px;
+}
+
+/*-langages-*/
+
+#langages{
+    max-height: 600px;
+    max-width: 375px /*100vw*/;   /*     !!!!!! a changer !!!!!!   */
+    display: flex;
+    flex-direction: column;
+    column-gap: 17px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+ #langages li{
+     margin-left: 0;
+     /* margin-right: 1em; non car ici utilisé gap */
+    margin-bottom: 16px; /*1em*/
+     padding: 19px;
+     background-color: var(--white);
+     border-radius: 15px;
+     width: 117px;
+     height: 117px;
+
+     /*display: inline-block;           jsp pq j'ai fait ça */
+
+
+/*Hover effect for display and shadow */
+
+ }
+#langages li:last-of-type{
+    margin-bottom: 25px;
+}
+
+
+#langages a{
+    height: 114px;
+
+/*text-align: center;
+    justify-content: center; */
+}
+
+/* #langages li img{
+     display: inline-block;
+     align-items: center;
+     text-align: center;
+     justify-content: center;
+ } */
+
+/*-----images------*/
+
+/* img{                             A voir si vraiment nécessaire. !!!!
+     display: inline-block;
+     text-align: center;
+     align-items: center ;
+     align-content: center;
+
+ }*/
+
+
+
+
+/*VERIFIER */
+
+
+
+/*-caroussel images-*/
+ .caroussel img{
+     border-radius: 17px;
+ }
+/*.caroussel{
+     display: inline;
+ }*/
+
+/*------langages images-----*/
+ #langages li img{
+     display: block;
+     margin: auto;
+     text-align: center;
+ }
+#langages li img + img{
+    margin-left: 17px;
+}
+
+
+
+/*-background images-*/
+ .backgroundimage{
+     margin: 0;
+ }
+.backgroundimage:first-of-type{
+    /*    position: absolute;
+    top: 1152px;*/
+position: relative;
+    margin-top: -81px;
+    z-index: 1;
+}
+.backgroundimage:last-of-type{
+    /*    position: absolute;
+    top: 1842px;*/
+
+position: relative;
+    margin-top: -33px;
+    z-index: 1;
+}
+
+
+/*------Bouton contact--------*/
+ button[type="button"]{
+     width: 18px;
+     height: 18px;
+     border-radius: 9px;
+     border-color: #8D8D8D;
+ }
+/*button[type="button"]clicked{       !!!! a revoir
+     background-color: black;
+ }*/
+  .contactbutton{
+      display: block;
+      border: 2px solid black;
+      border-radius: 19px;
+      width: auto;
+      padding-top: 11px;
+      padding-bottom: 12px;
+      text-align: center;
+      font-weight: 900;
+      /*    font-family: 'Montserrat Alternates', sans-serif;*/
+  }
+#competences .contactbutton{
+    margin-bottom: 56px;
+}
+#monparcours .contactbutton{
+    margin-bottom: 0;
+}
+
+
+
+/*-------navigation principale-------*/
+
+ .nav-principale ul>li{
+     /*    font-family: 'Avenir Next', Helvetica, Arial, sans-serif;*/
+    font-family:
+     font-weight : 900;
+     font-size: 24px;
+     line-height: 210%;
+ }
+.nav-principale ul>li ul>li{
+    font-weight: 400;
+    font-size: 16px;
+    color: #6C6C6C;
+    /*    line-height: 35px;*/
+line-height: 210%;        /*----!!!!!! à vérifier comment on peut changer*/
+}
+.nav-principale{
+    padding: 25px 25px 28px;
+    border-bottom: 1px solid #D5D5D5;
+}
+.nav-principale ul>li ul>li{
+    padding-left: 25px;
+}
+.navigation-title{
+    position: absolute;
+    text-indent: -999999px;
+}
+.location-nav{
+    margin-top: 36px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #6C6C6C;
+}
+#navigation:checked+.navigation-list{
+    /*    display: none;*/
+position: absolute;
+    text-indent: -999999px;
+}
+#navigation:checked {
+    max-height: 72px;
+}
+/*#navigation:not(:checked)+.navigation-list{
+     /*    display: block;/
+    position: absolute;
+     text-indent: -999999px;
+ }*/
+
+
+/*----dropdowns-----*/
+ .dropdown-category{
+     font-size: 24px;
+
+ }
+.dropdown-category.firstcategory{
+    padding-top: 48px;
+    border-top: 2px solid white;
+}
+
+.dropdown-category.lastcategory{
+    padding-bottom: 38px;
+    border-bottom: 2px solid white;
+}
+.dropdowns ul li ul li{
+    padding-left: 8px;
+    padding-top: 24px;
+}
+
+.dropdowns ul li ul li:first-of-type{
+    padding-top: 26px;
+}
+.dropdowns ul li ul li:last-of-type{
+    padding-bottom: 60px;
+}
+
+
+
+
+/*----externlinks-----*/
+ .externlinks li:not(:first-child){
+     padding-top: 24px;
+ }
+.externlinks li:first-child{
+    padding-top: 37px;
+}
+.externlinks ul{
+    padding: 37px 17px;
+    /*    padding-top: 37px;
+    padding-bottom: 37px;*/
+/*    margin-bottom: 37px;*/
+max-height: 131px;
+    max-width: 375px ;   /*100vw*!!*     !!!!!! a changer !!!!!!   */
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+.externlinks{
+    border-bottom: 2px solid #FFFFFF;           /*comment faire le border plus court que le texte*/
+    border-top: 2px solid #FFFFFF;
+}
+
+
+/*-reseaux sociaux-*/
+
+ .réseaux-sociaux a{
+     padding: 8px;
+     border: 2px white solid;
+     border-radius: 50%;
+     text-align: center;
+     line-height: 100%;
+ }
+.réseaux-sociaux{
+    margin-bottom: 36px;
+    margin-top: 32px;
+}
+.réseaux-sociaux a{
+    margin-right: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------Caroussel-------*/
+
+/*TEST */
+
+/** {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }*/
+
+  .caroussel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*    height: 100vh;*/
+    /* background-color: #f4f4f4;*/
+  }
+
+.carousel {
+    position: relative;
+    width: 90vw;
+    /* overflow: hidden; *!!
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 1 0 100%;
+    padding: 0 6px; /* padding entre les images*/
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Radio-Buttons verstecken */
+ input[type="radio"] {
+     display: none;
+ }
+
+/* Navigation */
+ .carousel-nav {
+     display: flex;
+     justify-content: center;
+     margin-top: 23px;
+ }
+
+.carousel-nav label {
+    width: 15px;
+    height: 15px;
+    background: #aaa;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-nav label:hover {
+    background: #666;
+}
+
+/* CSS Magie: Wechsel der Bilder durch Radio-Buttons */
+ #slide1:checked ~ .carousel-images {
+     transform: translateX(0%);
+ }
+#slide2:checked ~ .carousel-images {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .carousel-images {
+    transform: translateX(-200%);
+}
+.slideshow{
+    margin-top: 23px;
+    padding-bottom: 0;
+}
+.slideshow h2{
+    position: absolute;
+    left: -999999px;
+}
+
+/* noch richtig machen */
+ h1{
+     position: absolute;
+     top: 683px;
+     text-align: center;
+     width: 100vw;
+     font-size: 30px;
+     /*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*/
+ }
+
+
+/*.externlinks{
+    display: flex;
+    min-height: 139px;
+    min-width: 144px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}*/
+.externlinks{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+/*    min-height: 139px;
+    min-width: 144px;*/
+    column-gap: 17px;
+}
+
+
+/*VERIFIER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!*----Texte----*!
 h1{
     font-size: 30px;
     font-weight: 900;
@@ -24,13 +586,74 @@ h1{
 p{
     font-size: 1em;
 }
-/*.caroussel{
-    display: inline;
-}*/
+a{
+    text-decoration: none;
+}
+h2{
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+.impressum{
+!*    font-family: Montserrat,Avenir, Helvetica, Arial, sans-serif ;*!
+!*    font-family: Avenir, Helvetica, Arial, sans-serif;*!
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 78px;
+}
+
+!*----Footer----*!
+footer a{
+    color: white;
+!*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*!
+    font-size: 14px;
+    line-height: 128%;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding-left: 17px;
+}
+
+!*----header----*!
+header{
+    background-color: white;
+}
+header{
+    max-height: 812px;
+}
+
+!*-----Body------*!
+body{
+    background-color: #EEEEEE;
+}
+
+
+!*----main----*!
+
+
+main a, header a{
+    color: black;
+!*    font-family:  Montserrat,Avenir, Helvetica, Arial, sans-serif ;*!
+}
+
+
+!*--- Tout ----*!
+html{
+    font-family:Montserrat,Avenir, Helvetica, Arial, sans-serif ;
+}
+
+
+!*----Sections-----*!
+
 section p:last-of-type {
     margin-bottom: 40px;
 }
 section p{
+    margin-bottom: 34px;
+    line-height: 23px;
+}
+section li{
     margin-bottom: 34px;
     line-height: 23px;
 }
@@ -39,43 +662,113 @@ main section{
     margin-right: 24px;
     padding: 32px 15px 33px 25px;
 }
-.caroussel img{
-    border-radius: 17px;
-}
-h2{
-    font-size: 29px;
-    font-weight: 600;
-    margin-bottom: 22px;
-}
+
+
+
+!*-plusieurs sections-*!
+
 #moi, #monparcours{
     position: relative;
     background-color: white;
     border-radius: 17px;
     z-index: 3;
 }
-#langages a{
-    height: 114px;
-
-    /* text-align: center;
-    justify-content: center; */
+!*-moi-*!
+#moi{
+    margin-top: 146px;
+    !*    position: relative;*!
 }
+
+!*-monparcours-*!
+
+#monparcours{
+    margin-top: 55px;
+    !*    margin-bottom: 278px;*!
+}
+#monparcours h2{
+    margin-bottom: 37px;
+}
+#monparcours li{
+    line-height: 23px;
+    margin-bottom: 21px;
+}
+#monparcours li::before{
+    content: "-";
+    margin-right: 5px;
+}
+
+!*-competences-*!
+#competences{
+    padding: 0;
+}
+!*-langages-*!
 #langages li{
     margin-left: 0;
-    /* margin-right: 1em;
-    margin-bottom: 1em; */
+    !* margin-right: 1em;
+    margin-bottom: 1em; *!
+    margin-bottom: 16px;
     padding: 19px;
     background-color: white;
     border-radius: 15px;
-    width: 136px;
-    height: 136px;
+    width: 117px;
+    height: 117px;
+
+    !*
     display: inline-block;
+
+    *!
+
+
 }
-/* #langages li img{
+#langages li:last-of-type{
+    margin-bottom: 25px;
+}
+#langages{
+    max-height: 600px;
+    max-width: 375px !*100vw*!;   !*     !!!!!! a changer !!!!!!   *!
+    display: flex;
+    flex-direction: column;
+    column-gap: 17px;
+    flex-wrap: wrap;
+}
+
+#langages a{
+    height: 114px;
+
+    !* text-align: center;
+    justify-content: center; *!
+}
+
+!* #langages li img{
     display: inline-block;
     align-items: center;
      text-align: center;
     justify-content: center;
-} */
+} *!
+
+
+
+
+!*-----images------*!
+
+img{
+    display: inline-block;
+    text-align: center;
+    align-items: center ;
+    align-content: center;
+
+}
+
+
+!*-caroussel images-*!
+.caroussel img{
+    border-radius: 17px;
+}
+!*.caroussel{
+    display: inline;
+}*!
+
+!*------langages images-----*!
 #langages li img{
     display: block;
     margin: auto;
@@ -84,72 +777,66 @@ h2{
 #langages li img + img{
     margin-left: 17px;
 }
+
+
+
+!*-background images-*!
 .backgroundimage{
     margin: 0;
 }
 .backgroundimage:first-of-type{
-/*    position: absolute;
-    top: 1152px;*/
+    !*    position: absolute;
+        top: 1152px;*!
     position: relative;
     margin-top: -59px;
     z-index: 1;
 }
 .backgroundimage:last-of-type{
-/*    position: absolute;
-    top: 1842px;*/
+    !*    position: absolute;
+        top: 1842px;*!
 
     position: relative;
     margin-top: -33px;
     margin-bottom: 58px;
     z-index: 1;
 }
+
+
+!*------Bouton contact--------*!
 button[type="button"]{
     width: 18px;
     height: 18px;
     border-radius: 9px;
     border-color: #8D8D8D;
 }
-button[type="button"]clicked{
+!*button[type="button"]clicked{       !!!! a revoir
     background-color: black;
-}
+}*!
 .contactbutton{
     display: block;
     border: 2px solid black;
-    border-radius: 19.5px;
+    border-radius: 19px;
     width: auto;
     padding-top: 11px;
     padding-bottom: 12px;
     text-align: center;
     font-weight: 900;
-    font-family: 'Montserrat Alternates', sans-serif;
+!*    font-family: 'Montserrat Alternates', sans-serif;*!
 }
 #competences .contactbutton{
     margin-bottom: 56px;
 }
-#moi{
-    margin-top: 146px;
-/*    position: relative;*/
+#monparcours .contactbutton{
+    margin-bottom: 0;
 }
-#monparcours{
-    margin-top: 55.5px;
-/*    margin-bottom: 278px;*/
-}
-section li{
-    margin-bottom: 34px;
-    line-height: 23px;
-}
-#competences{
-    padding: 0;
-}
-img{
-    display: inline-block;
-    text-align: center;
-    align-items: center ;
-    align-content: center;
 
-}
+
+
+!*-------navigation principale-------*!
+
 .nav-principale ul>li{
-    font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+!*    font-family: 'Avenir Next', Helvetica, Arial, sans-serif;*!
+    font-family:
     font-weight: 900;
     font-size: 24px;
     line-height: 210%;
@@ -158,8 +845,8 @@ img{
     font-weight: 400;
     font-size: 16px;
     color: #6C6C6C;
-    line-height: 35px;
-    line-height: 210%;
+!*    line-height: 35px;*!
+    line-height: 210%;        !*----!!!!!! à vérifier comment on peut changer*!
 }
 .nav-principale{
     padding: 25px 25px 124px;
@@ -179,20 +866,22 @@ img{
     font-weight: 600;
     color: #6C6C6C;
 }
-#monparcours h2{
-    margin-bottom: 37px;
+#navigation:checked+.navigation-list{
+    !*    display: none;*!
+    position: absolute;
+    text-indent: -999999px;
 }
-#monparcours li{
-    line-height: 23px;
-    margin-bottom: 21px;
+#navigation:checked {
+max-height: 72px;
 }
-#monparcours li::before{
-    content: "-";
-    margin-right: 5px;
-}
-#monparcours .contactbutton{
-    margin-bottom: 0px;
-}
+!*#navigation:not(:checked)+.navigation-list{
+!*    display: block;*!
+    position: absolute;
+    text-indent: -999999px;
+}*!
+
+
+!*----dropdowns-----*!
 .dropdown-category{
     font-size: 24px;
 
@@ -217,6 +906,11 @@ img{
 .dropdowns ul li ul li:last-of-type{
     padding-bottom: 60px;
 }
+
+
+
+
+!*----externlinks-----*!
 .externlinks li:not(:first-child){
     padding-top: 24px;
 }
@@ -224,8 +918,25 @@ img{
     padding-top: 37px;
 }
 .externlinks ul{
-    margin-bottom: 37px;
+    padding: 37px 17px;
+!*    padding-top: 37px;
+    padding-bottom: 37px;*!
+!*    margin-bottom: 37px;*!
+        max-height: 131px;
+        max-width: 375px ;   !*100vw*!!*     !!!!!! a changer !!!!!!   *!
+        display: flex;
+        flex-direction: column;
+        column-gap: 20px;
+        flex-wrap: wrap;
 }
+.externlinks{
+    border-bottom: 2px solid #FFFFFF;           !*comment faire le border plus court que le texte*!
+    border-top: 2px solid #FFFFFF;
+}
+
+
+!*-reseaux sociaux-*!
+
 .réseaux-sociaux a{
     padding: 8px;
     border: 2px white solid;
@@ -236,47 +947,59 @@ img{
 .réseaux-sociaux{
     margin-bottom: 36px;
 }
-.impressum{
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    padding-bottom: 78px;
-}
-
-#navigation:checked+.navigation-list{
-    display: none;
-}
-#navigation:not(:checked)+.navigation-list{
-    display: block;
-}
 
 
 
 
 
 
-/*TEST */
 
-/** {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!*------Caroussel-------*!
+
+!*TEST *!
+
+!** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}*/
+}*!
 
 .caroussel {
     display: flex;
     justify-content: center;
     align-items: center;
-/*    height: 100vh;*/
-   /* background-color: #f4f4f4;*/
+!*    height: 100vh;*!
+   !* background-color: #f4f4f4;*!
 }
 
 .carousel {
     position: relative;
     width: 90vw;
-    /* overflow: hidden; *//*
+    !* overflow: hidden; *!!*
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*!
 }
 
 .carousel-images {
@@ -288,7 +1011,7 @@ img{
 .carousel-item {
     width: 100%;
     flex: 1 0 100%;
-    padding: 0 6px; /* padding entre les images*/
+    padding: 0 6px; !* padding entre les images*!
 }
 
 .carousel-item img {
@@ -296,12 +1019,12 @@ img{
     height: 100%;
 }
 
-/* Radio-Buttons verstecken */
+!* Radio-Buttons verstecken *!
 input[type="radio"] {
     display: none;
 }
 
-/* Navigation */
+!* Navigation *!
 .carousel-nav {
     display: flex;
     justify-content: center;
@@ -322,7 +1045,7 @@ input[type="radio"] {
     background: #666;
 }
 
-/* CSS Magie: Wechsel der Bilder durch Radio-Buttons */
+!* CSS Magie: Wechsel der Bilder durch Radio-Buttons *!
 #slide1:checked ~ .carousel-images {
     transform: translateX(0%);
 }
@@ -341,14 +1064,14 @@ input[type="radio"] {
     left: -999999px;
 }
 
-/* noch richtig machen */
+!* noch richtig machen *!
 h1{
     position: absolute;
     top: 683px;
     text-align: center;
     width: 100vw;
     font-size: 30px;
-    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;
+!*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*!
 }
 
 
@@ -358,4 +1081,4 @@ h1{
     min-width: 144px;
     flex-direction: column;
     flex-wrap: wrap;
-}
+}*/
