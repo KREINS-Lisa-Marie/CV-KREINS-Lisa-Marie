@@ -9,6 +9,7 @@
 html{
     font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif ;
     font-size: 16px;
+
 }
 
 
@@ -37,13 +38,13 @@ a{
 /*----Footer----*/
  footer a{
      color: var(--white);
-     font-size: 14px;
+     font-size: 14px;dropdown-category
      line-height: 128%;
  }
 footer{
     background-color: var(--black);
     color: var(--white);
-    padding-left: 17px;
+    padding-left: 24px;
 }
 
 
@@ -328,11 +329,13 @@ position: absolute;
 /*----dropdowns-----*/
  .dropdown-category{
      font-size: 24px;
+     margin-left: -7px;
 
  }
 .dropdown-category.firstcategory{
-    padding-top: 48px;
+ /*   padding-top: 48px;            PAs besoin*/
     border-top: 2px solid white;
+
 }
 
 .dropdown-category.lastcategory{
@@ -358,15 +361,16 @@ position: absolute;
  .externlinks li:not(:first-child){
      padding-top: 24px;
  }
-.externlinks li:first-child{
+/*.externlinks li:first-child{
     padding-top: 37px;
-}
+}*/
 .externlinks ul{
-    padding: 37px 17px;
+    padding-top: 37px;
+    padding-bottom: 37px;
     /*    padding-top: 37px;
     padding-bottom: 37px;*/
 /*    margin-bottom: 37px;*/
-max-height: 131px;
+max-height: 205px;
     max-width: 375px ;   /*100vw*!!*     !!!!!! a changer !!!!!!   */
     display: flex;
     flex-direction: column;
@@ -377,7 +381,10 @@ max-height: 131px;
     border-bottom: 2px solid #FFFFFF;           /*comment faire le border plus court que le texte*/
     border-top: 2px solid #FFFFFF;
 }
-
+.externlinks li{
+    font-size: 14px;
+    max-width: 152px;
+}
 
 /*-reseaux sociaux-*/
 
@@ -444,6 +451,7 @@ max-height: 131px;
 .carousel {
     position: relative;
     width: 90vw;
+    overflow-x: clip;
     /* overflow: hidden; *!!
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
@@ -453,6 +461,7 @@ max-height: 131px;
     display: flex;
     width: 100%;
     transition: transform 0.5s ease-in-out;
+
 }
 
 .carousel-item {
@@ -536,6 +545,60 @@ max-height: 131px;
     min-width: 144px;*/
     column-gap: 17px;
 }
+
+
+/*INPUT*/
+
+label{
+    margin-right: 16px;
+}
+
+input{
+    min-height: 24px;
+    width: 60%;  /* verifier!*/
+    border-radius: 19px;
+    background-color: var(--white);
+    margin-bottom: 10px ;
+    border: none;
+
+}
+textarea{
+    display: block;
+    min-height: 75px;
+    width: 80vw;  /* verifier!*/
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 8px 12px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border: none;
+    margin-top: 10px;
+}
+#envoyer{
+    margin-top: 25px;
+    margin-bottom: 52px;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    width: 100vw;
+    min-height: 41.71px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+color: var(--white);
+}
+
+.logoblancfooter{
+/*    display: block;           PQ? */
+    margin-top: 54px;
+    margin-bottom: 49px;
+}
+
+.premiercontactfooter{
+    border: 2px solid var(--white);
+    border-radius: 19px;
+    min-height: 39px;
+    min-width: 100vw;
+    margin-bottom: 64px;
+}
+
 
 
 /*VERIFIER */
