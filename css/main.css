@@ -1,31 +1,45 @@
+/* AB 600 ändert der footer */
+
 /* Définition des couleurs*/
 :root{
     --white: #FFFFFF;
     --black: #000000;
     --grey: #EEEEEE;
-    --headergrey: #6C6C6C
+    --headergrey: #6C6C6C;
+    --navborder: #D5D5D5;
 }
 
 /*--- Tout ----*/
 html{
     font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif ;     /* à revoir! */
     font-size: 16px;
-
+}
+h3.sro, .skip-nav-sro{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    border: none;
 }
 
 
 /*!*----Texte----*!*/
 h1{
-    font-size: 30px;
-    font-weight: 700;
+/*    font-size: 30px;
+    font-weight: 700;*/
+    display: inline;
 }
 p{
-    font-size: 1em;  /*16px*/
+    font-size: 1em;         /*16px*/
 }
 h2{
-    font-size: 28px;                                    /*peut aussi mettre à 28 ou 30? sinon on voit pas vraiment de difference*/
+    font-size: 28px;    /*peut aussi mettre à 28 ou 30? sinon on voit pas vraiment de difference*/
     font-weight: 700;
     margin-bottom: 22px;
+    line-height: 38px;
 }
 .impressum{
     font-size: 13px;
@@ -35,7 +49,6 @@ h2{
 a{
     text-decoration: none;
 }
-
 
 
 /*----Footer----*/
@@ -51,13 +64,11 @@ footer{
 }
 
 
-
 /*----header----*/
 header{
     background-color: var(--white);
-}
-header{
-    max-height: 812px;                                      /* tu penses que c'est bon?*/
+    max-height: 812px;      /* tu penses que c'est bon? man kann wenn das menu auf ist max höhe festlegen*/
+    min-height: 72px;
 }
 header a{
     color: var(--headergrey);
@@ -67,29 +78,18 @@ header a{
     color: var(--black);
     font-weight: 600;
 }
-header a.contactbutton{
+header.contactbutton{           /*help geht nicht*/
     color: var(--black);
     max-height: 39px;
 }
+.contact-header{
 
-
-
-/*------Bouton contact--------*/
-.contactbutton{
-    display: block;
-    border: 2px solid var(--black);
-    border-radius: 19px;
-    width: auto;                                                      /*oder besser so? */
-    padding-top: 12px;
-    padding-bottom: 11px;
-    text-align: center;
-    font-weight: 900;
 }
-#competences .contactbutton{
-    margin-bottom: 56px;
-}
-#monparcours .contactbutton{
-    margin-bottom: 0;
+.travailler-nav{
+padding-top: 34px;
+margin-top: 60.5px;
+    font-size: 12px;
+    border-top: 1px solid var(--navborder);
 }
 
 
@@ -105,7 +105,6 @@ main a{
 }
 
 
-
 /*----Sections-----*/
 
 section p{
@@ -115,13 +114,12 @@ section p{
 
 /*-moi-*/
 #moi{
-    margin-top: 148px;                   /*.    !!! a vérifier !!!! */  /*  = jusque boutons radio* /
+    margin-top: 148px;        /*.    !!! a vérifier !!!! */
     /*    position: relative;*/
 }
 #moi p:last-of-type {
     margin-bottom: 40px;
 }
-
 
 /*-monparcours-*/
 
@@ -131,6 +129,7 @@ section p{
 }
 #monparcours h2{
     margin-bottom: 37px;
+
 }
 #monparcours li{
     line-height: 23px;
@@ -141,16 +140,13 @@ section p{
     margin-right: 5px;
 }
 
-/*section li{                       /.   !!!!     à vérifier ùmais sinon peut être supprimé.   /
-    margin-bottom: 34px;
-    line-height: 23px;
-}*/
-
 main section{
     margin-left: 24px;
     margin-right: 24px;
     padding: 39px 22px 33px 25px;               /* !!!! verifier.  anciennes valeurs = 32px 15px 33px 25px */
 }
+
+
 
 /*-plusieurs sections-*/
 
@@ -160,6 +156,8 @@ main section{
     border-radius: 15px;
     z-index: 3;
 }
+
+
 
 /*-competences-*/
 #competences{
@@ -173,17 +171,20 @@ main section{
 
 /*-langages-*/
 
-#langages{
+.languages-list{
     max-height: 600px;                                            /* pq seulement 600 marche???*/
     max-width: 375px /*100vw*/;                             /*     !!!!!! a changer !!!!!!   */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     column-gap: 17px;
     flex-wrap: wrap;
     text-align: center;                                  /* est-ce que je peux enlever ici ????*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#langages li{
+
+.languages-list li{
     margin-left: 0;
     /* margin-right: 1em; non car ici utilisé gap */
     margin-bottom: 16px; /*1em*/
@@ -192,182 +193,35 @@ main section{
     border-radius: 15px;
     width: 117px;   /* pour que width et height total = 155px */
     height: 117px;
+    /*Hover effect for display and shadow */
 
-    /*display: inline-block;                                     jsp pq j'ai fait ça */
-
-
-                                                                /*Hover effect for display and shadow */
 }
-#langages li:last-of-type{
+.languages-list li:last-of-type{
     margin-bottom: 25px;
 }
 
-#langages a {
-    height: 114px;                                                  /* pq j'ai fait ça??? enlever?*/
 
-    /*text-align: center;
-        justify-content: center; */
+.languages-list a{
+    height: 114px;
 }
-
-/* #langages li img{
-     display: inline-block;
-     align-items: center;                                       /jsp pq j'ai fait ça .. supprimer?/
-     text-align: center;
-     justify-content: center;
- } */
-
-
-/*-----images------*/
-
-/* img{                                              A voir si vraiment nécessaire. !!!!     Supprimer?
-     display: inline-block;
-     text-align: center;
-     align-items: center ;
-     align-content: center;
-
- }*/
-
-
-
-/*VERIFIER */
-
-
-
-/*-caroussel images-*/
-.caroussel img{
-    border-radius: 17px;
-}
-/*.caroussel{
-     display: inline;
- }*/
 
 /*------langages images-----*/
-#langages li img{
-    /*display: block;*/
-/*    margin: auto;
-    text-align: center;*/
-
+.languages-list li img{
+    display: block;
+    margin: auto;
+    text-align: center;
 }
-#langages li img + img{
+.languages-list li img + img{
     margin-left: 17px;
 }
 
 
-
-
-
-
-
-.caroussel {
-/*    display: flex;*/
-/*    justify-content: center;
-    align-items: center;*/
-    /*    height: 100vh;*/
-}
-
-
-.carousel {
-/*    position: relative;*/
-    width: 90vw;
-    overflow-x: clip;
-    /* overflow: hidden; */
-    /*border-radius: 10px;*/
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-}
-
-.carousel-images {
-    display: flex;
-    width: 100%;
-    /*transition: transform 0.5s ease-in-out;*/
-
-}
-
-/*.carousel-item {
-    width: 100%;
-    flex: 1 0 100%;                                             WAs macht?
-    padding: 0 6px; !* padding entre les images*!
-}*/
-
-/*.carousel-item img {
-    width: 100%;
-    height: 100%;
-}*/
-
-/* Radio-Buttons verstecken */
-input[type="radio"] {
-    display: none;
-}
-
-/* Navigation */
-/*.carousel-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 23px;
-}
-*/
-/*
-.carousel-nav label {
-    width: 15px;
-    height: 15px;
-    background: #aaa;
-    border-radius: 50%;
-    margin: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}*/
-/*
-.carousel-nav label:hover {
-    background: #666;
-}
-
-!* CSS Magie: Wechsel der Bilder durch Radio-Buttons *!
-#slide1:checked ~ .carousel-images {
-    transform: translateX(0%);
-}
-#slide2:checked ~ .carousel-images {
-    transform: translateX(-100%);
-}
-#slide3:checked ~ .carousel-images {
-    transform: translateX(-200%);
-}
-.slideshow{
-    margin-top: 23px;
-    padding-bottom: 0;
-}
-.slideshow h2{
-    position: absolute;
-    left: -999999px;
-}
-
-!* noch richtig machen *!
-h1{
-    position: absolute;
-    top: 683px;
-    text-align: center;
-    width: 100vw;
-    font-size: 30px;
-    !*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*!
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-background images-*/
-.backgroundimage{
-/*    margin: 0;*/
-}
 
+
+.backgroundimage{
+    margin: 0;
+}
 .backgroundimage:first-of-type{
     /*    position: absolute;
     top: 1152px;*/
@@ -384,9 +238,183 @@ h1{
     z-index: 1;
 }
 
+.contactbutton{
+    display: block;
+    border: 2px solid var(--black);
+    border-radius: 19px;
+    width: auto;                                                      /*oder besser so? */
+    padding-top: 10px;
+    padding-bottom: 9px;
+    text-align: center;
+    font-weight: 900;
+}
+.competences.contactbutton{
+    margin-bottom: 56px;
+}
+#monparcours .contactbutton{
+    margin-bottom: 0;
+}
+
+
+/*----externlinks-----*/
+.externlinks li:not(:first-child){
+    padding-top: 24px;
+}
+/*.externlinks li:first-child{
+    padding-top: 37px;
+}*/
+.externlinks ul{
+    padding-top: 37px;
+    padding-bottom: 37px;
+    /*    padding-top: 37px;
+    padding-bottom: 37px;*/
+    /*    margin-bottom: 37px;*/
+    max-height: 160px;                  /* à changer !!!!*/
+    max-width: calc(100vw - 48px) ;   /* juste?    !!!!!! a changer !!!!!!   */
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    align-content: first;
+}
+.externlinks{
+    border-bottom: 2px solid #FFFFFF;           /*comment faire le border plus court que le texte*/
+    border-top: 2px solid #FFFFFF;
+    max-width: calc(100vw - 48px);
+}
+.externlinks li{
+    font-size: 14px;
+    max-width: 152px;
+
+}
+.externlinks li:nth-child(4){
+    padding-top: 0;
+}
+
+/*-reseaux sociaux-*/
+
+.social-media a img{
+    padding: 8px;
+    border: 2px white solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 33px;
+    margin-right: 13px;
+}
+.social-media{
+    margin-bottom: 36px;
+    margin-top: 32px;
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.externlinks{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*    min-height: 139px;
+        min-width: 144px;*/
+    column-gap: 17px;
+}
+
+
+/*INPUT*/
+
+label{
+    margin-left: 26px;
+    font-size: 14px;
+    display: block;
+    margin-top: 38px;
+    margin-bottom: 13px ;
+}
+form>label:first-of-type{
+    margin-top: 0;
+}
+input{
+    margin-left: 26px;
+    width: calc(100vw - 100px);  /* verifier!*/
+    border-radius: 8px;
+    background-color: var(--white);
+    min-height: 58px;
+    max-height: 58px;
+    border: none;
+
+}
+textarea{
+    margin-left: 26px;
+    display: block;
+    min-height: 116px;
+    max-height: 116px;
+    width: calc(100vw - 100px - 24px);  /* verifier!*/ /*!!!!*/
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 8px 12px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border: none;
+}
+#envoyer{
+    margin-left: 0;
+    margin-top: 25px;
+    margin-bottom: 52px;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    width: calc(100vw - 48px);
+    min-height: 0;
+/*    min-height: 41.71px;*/
+    padding-top: 7px;
+    padding-bottom: 6px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: var(--white);
+    border-radius: 19.5px;
+}
+
+.logoblancfooter{
+    /*    display: block;           PQ? */
+    margin-top: 54px;
+    margin-bottom: 49px;
+}
+
+.premiercontactfooter{
+    display: block;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 2px solid var(--white);
+    border-radius: 19px;
+    margin-bottom: 64px;
+    font-weight: 400;
+    text-align: center;
+    max-width: calc(100vw - 48px);
+    /*width: auto;              */                                        /*oder besser so? */
+}
+
+.logo-footer{
+    border-bottom: 2px solid white;
+    max-width: calc(100vw - 48px);
+}
