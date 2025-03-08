@@ -18,44 +18,48 @@
 <!-- images bizarres pixellisées!!! -->
 <header>
     <h1>
-        <img src="./img/Logo petit.png" alt="Le Logo de la page Web Lisa-Marie Kreins" height="25" width="130">
+        <img src="./img/logo-site-noir.svg" alt="Le Logo de la page Web Lisa-Marie Kreins" height="25" width="130">
     </h1>
     <nav class="nav-principale">
         <h2 class="navigation-title">
             Navigation principale
         </h2>
+        <a href="#slideshow" class="skip-nav-sro">
+            Aller vers le contenu principal du site
+        </a>
 
-        <input type="checkbox" checked id="navigation">
+        <input type="checkbox" checked id="navigation" name="navigation">
+
  <!--       <ul class="navigation-list">-->
         <!-- &lt;!&ndash; A completer nav &ndash;&gt;-->
-
+        <div class="header-content">
         <ul class="navigation-list">
             <li>
                 <a class="category-title" href="#">Sur moi</a>
             </li>
             <li>
-                <a href="#">Sites utilisés</a>
+                <a class="category-title" href="#" >Sites utilisés</a>
                 <ul>
                     <li>
-                        <a href="">Stackoverflow</a>
+                        <a href="https://stackoverflow.com/questions" title="Aller vers le site de Stackoverflow">Stackoverflow</a>
                     </li>
                     <li>
-                        <a href="">MDN</a>
+                        <a href="https://developer.mozilla.org/fr/" title="Aller vers le site de MDN">MDN</a>
                     </li>
                     <li>
-                        <a href="">Figma</a>
+                        <a href="https://www.figma.com" title="Aller vers le site de Figma">Figma</a>
                     </li>
                     <li>
-                        <a href="">A remplir</a>
+                        <a href="https://schema.org/" title="Aller vers le site de Schema">Schema</a>
                     </li>
                     <li>
-                        <a href="">A remplir</a>
+                        <a href="https://validator.w3.org/" title="Aller vers le site de W3C - Validator">W3C - Validator</a>
                     </li>
                     <li>
-                        <a href="">A remplir</a>
+                        <a href="https://github.com/KREINS-Lisa-Marie" title="Aller vers le site de Github">Github</a>
                     </li>
                     <li>
-                        <a href="">A remplir</a>
+                        <a href="https://www.pexels.com/" title="Aller vers le site de Pexels">Pexels</a>
                     </li>
                 </ul>
             </li>
@@ -77,10 +81,10 @@
                 <a href="#" class="category-title">Mes compétences</a>
             </li>
         </ul>
-        <div class="location-nav">
-            <p>ENVIE DE TRAVAILLER AVEC MOI?</p>
-            <a href="#" class="contactbutton">Contactez-moi</a></div>
 
+            <p class="travailler-nav">ENVIE DE TRAVAILLER AVEC MOI?</p>
+            <a href="#contact" class="contactbutton contact-header">Contactez-moi</a>
+        </div>
     </nav>
 
 </header>
@@ -90,14 +94,23 @@
 <!-- à vérifier les images et leurs dimensions-->
 <!-- <br>  ici justifiés?  -->
 
+
+<!--
+
+layout page change
+
+1x <1200
+1x >1200
+
+ < -->
+
+
+
 <main>
-    <h1>
-        Web Designer
-    </h1>
-    <section class="slideshow">
+    <section class="slideshow" id="slideshow">
         <h2>
             Slideshow <!-- noch richtig machen ! button sind nicht 100% richtig-->
-</h2>
+    </h2>
         <div class="caroussel">
             <div class="carousel">
                 <input type="radio" name="slider" id="slide1" >
@@ -110,6 +123,17 @@
                              alt="multilingue : français, allemand, néerlandais, anglais, luxembourgeois">
                     </div>
                     <div class="carousel-item">
+<!--                        <img
+                                srcset="./img/Lisa-Marie-200.webp 200w,
+                                        ./img/Lisa-Marie-297.webp 297w,
+                                        ./img/Lisa-Marie-519.webp 519w"
+                                sizes="(max-width: 375px) 297px,
+                                (max-width: 1200px) 519px,
+                                519px"
+                                src="./img/Lisa-Marie-519.webp"
+                                alt="Image de l&rsquo;endroit de travail de Lisa-Marie Kreins."
+                                class="backgroundimage"
+                        />-->
                         <img src="./img/Lisa-Marie.webp" alt="Image de Lisa-Marie Kreins" height="489" width="297">
                     </div>
                     <div class="carousel-item">
@@ -126,12 +150,17 @@
             </div>
         </div>
     </section>
-    <section id="moi">
+    <div itemscope itemtype="https://schema.org/Person">
+        <h2 class="profession" itemprop="jobTitle">
+        Web Designer
+    </h2>
+    </div>
+    <section id="moi" itemscope itemtype="https://schema.org/Person">
         <h2>
             Qui suis-je?
         </h2>
-        <p>
-             Je m&rsquo;appelle Lisa-Marie Kreins et j&rsquo;ai 26 ans. Je suis étudiante à la <abbr title="Haute École de la Province de Liège">HEPL</abbr> en option Web. Je possède d&rsquo;un diplôme CESS et d&rsquo;un diplôme d&rsquo;assistante pharmaceutico-technique.
+        <p itemprop="description">
+            Je m&rsquo;appelle <span itemprop="givenName">Lisa-Marie</span> <span itemprop="familyName">Kreins</span> et j&rsquo;ai 26 ans. Je suis étudiante à la <abbr title="Haute École de la Province de Liège" itemscope itemtype="https://schema.org/Organization"><span itemprop="legalName">HEPL</span></abbr> en option Web. Je possède d&rsquo;un diplôme CESS et d&rsquo;un diplôme d&rsquo;assistante pharmaceutico-technique.
         </p>
         <p>
             Ce que j&rsquo;adore le plus dans le Web, c&rsquo;est de réaliser des sites Web responsifs et accessibles. J&rsquo;adore rendre service aux autres. Je veux améliorer la présentation de mes clients sur le Web.
@@ -156,111 +185,152 @@
         </ul>
         <a href="#contact" class="contactbutton">Contactez-moi</a>
     </section>
-    <img src="./img/image-pc.webp" alt="Image de l&rsquo;endroit de travail de Lisa-Marie Kreins." height="284" width="375" class="backgroundimage">
+<!--
+
+    <img src="image-default.jpg"
+         srcset="image-small.jpg 480w,
+             image-medium.jpg 1024w,
+             image-large.jpg 1600w"
+         sizes="(max-width: 600px) 480px,
+            (max-width: 1200px) 1024px,
+            1600px"
+         alt="Description de l'image">
+-->
+
+    <img
+            srcset="./img/bureau-300.webp 300w,
+            ./img/bureau-400.webp 400w,
+            ./img/bureau-600.webp 600w,
+            ./img/bureau-800.webp 800w,
+           ./img/bureau-1000.webp 1000w,
+           ./img/bureau-1200.webp 1200w"
+            sizes="(max-width: 400px) 300px,
+            (max-width: 1200px) 800px,
+            800px"
+            src="./img/bureau-800.webp"
+            alt="Image de l&rsquo;endroit de travail de Lisa-Marie Kreins."
+            class="backgroundimage"
+    />
+
+
+<!--    <img src="./img/image-pc.webp" alt="Image de l&rsquo;endroit de travail de Lisa-Marie Kreins." height="284" width="375" class="backgroundimage">-->
     <section id="competences">
         <h2>
             Découvrez mes compétences
         </h2>
-        <ul id="langages">
-            <li>
-                <a href="#contact"><img src="./img/html.png" alt="image du langage HTML" width="117" height="117"></a>
+        <ul class="languages-list" itemscope itemtype="https://schema.org/Person">
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">HTML</h3>
+                <a href="https://html.spec.whatwg.org/multipage/"><img src="./img/html-1.svg" alt="image du langage HTML" width="117" height="117" class="languages-image"></a>
             </li>
-            <li>
-                <a href="#contact"><img src="./img/CSS3.svg.png" width="90" height="117" alt="image du langage CSS "></a>
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">CSS</h3>
+                <a href="https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/"><img src="./img/css-3.svg" width="117" height="117" alt="image du langage CSS " class="languages-image"></a>
             </li>
-            <li>
-                <a href="#contact"><img src="./img/MySQL.png" width="117" height="117" alt="image du langage de programmation MySQL"></a>
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">MySQL</h3>
+                <a href="https://dev.mysql.com/doc/"><img src="./img/mysql.svg" width="117" height="117" alt="image du langage de programmation MySQL" class="languages-image"></a>
             </li>
-            <li>
-                <a href="#contact"><img src="./img/JavaScript-logo.png" alt="image du langage de programmation JavaScript" width="117" height="117"></a>
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">JavaScript</h3>
+                <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><img src="./img/logo-javascript.svg" alt="image du langage de programmation JavaScript" width="117" height="117" class="languages-image"></a>
             </li>
-            <li>
-                <a href="#contact"><img src="./img/logo-php.png" width="117" height="117" alt="image du langage de programmation PHP"></a>
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">PHP</h3>
+                <a href="https://www.php.net/"><img src="./img/Official%20PHP%20Logo.svg" width="117" height="117" alt="image du langage de programmation PHP" class="languages-image"></a>
             </li>
-            <li>
-                <a href="#contact"><img src="./img/typescript.svg" alt="image du langage de programmation TypeScript" width="117" height="117"></a>
+            <li class="languages-element">
+                <h3 class="sro" itemprop="skills">TypeScript</h3>
+                <a href="https://www.typescriptlang.org/docs/"><img src="./img/typescript.svg" alt="image du langage de programmation TypeScript" width="117" height="117" class="languages-image"></a>
             </li>
         </ul>
-        <a class="contactbutton" href="#contact">Contactez-moi</a>
+        <a class="contactbutton competences" href="#contact">Contactez-moi</a>
     </section>
 </main>
 <footer>
     <div class="logo-footer">
-        <img src="./img/logo-blanc.png" alt="Le Logo de la page Web Lisa-Marie Kreins" height="49" width="257" class="logoblancfooter">
-        <br>
-        <a href="#" class="premiercontactfooter">Contactez-moi</a>
+        <img src="./img/logo-site-blanc.svg" alt="Le Logo de la page Web Lisa-Marie Kreins" height="49" width="257" class="logoblancfooter">
+        <a href="#contact" class="premiercontactfooter">Contactez-moi</a>
     </div>
-    <div class="dropdowns">
-        <ul>
-            <li>
-                <a href="#" class="dropdown-category firstcategory">À propos de moi</a>
-                <ul>
-                    <li>
-                        <a href="">Qui suis-je?</a>
-                    </li>
-                    <li>
-                        <a href="">Mon parcours scolaire</a>
-                    </li>
-                    <li>
-                        <a href="">Mes compétences</a>
-                    </li>
-                    <li>
-                        <a href="">Me contacter</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="dropdown-category lastcategory" id="contact">Contact</a>
-                <form action="#" method="post" enctype="text/plain">
-                    <label for="name">
-                        Nom
-                    </label>
-                    <input type="text" id="name" name="name">
-                    <br>
-                    <label for="email">
-                        Adresse email
-                    </label>
-                    <input type="email" id="email" name="email" >
-                    <br>
-                    <label for="message">
-                        Votre message
-                    </label>
-                    <textarea name="message" id="message" placeholder="Entrez votre message ici"></textarea>
-                    <br>
-                    <input type="submit" id="envoyer">
-                </form>
-            </li>
-        </ul>
+    <div class="main-content-footer">
+        <div class="dropdowns">
+            <ul>
+                <li>
+                    <a href="#" class="dropdown-category firstcategory">À propos de moi</a>
+                    <ul>
+                        <li>
+                            <a href="">Qui suis-je?</a>
+                        </li>
+                        <li>
+                            <a href="">Mon parcours scolaire</a>
+                        </li>
+                        <li>
+                            <a href="">Mes compétences</a>
+                        </li>
+                        <li>
+                            <a href="">Me contacter</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="contact-form">
+                        <a href="#" class="dropdown-category lastcategory" id="contact">Contact</a>
+                        <form action="#" method="post" enctype="text/plain">
+                            <label for="name">
+                                Nom
+                            </label>
+                            <input type="text" id="name" name="name">
+
+                            <label for="email">
+                                Adresse email
+                            </label>
+                            <input type="email" id="email" name="email">
+
+                            <label for="message">
+                                Votre message
+                            </label>
+                            <textarea name="message" id="message" placeholder="Entrez votre message ici"></textarea>
+
+                            <input type="submit" id="envoyer">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="externlinks">
+            <ul itemscope itemprop="https://schema.org/Organization">
+                <li>
+                    <a title="aller vers le site de la Haute Ecole de la Province de Liège" href="https://hepl.be/fr"
+                       itemtype="legalName">Haute Ecole de la Province de Liège</a>
+                </li>
+                <li>
+                    <a title="aller vers le site du Bachelier en Design Web de la Haute Ecole de la Province de Liège"
+                       href="https://hepl.be/fr/techniques-infographiques/web">Bachelier en Design Web</a>
+                </li>
+                <li>
+                    <a title="aller vers le site de la Formation d'assistante pharmaceutico-technique"
+                       href="https://www.provincedeliege.be/fr/node/2449">Formation assistante en pharmacie</a>
+                </li>
+                <li>
+                    <a title="aller vers le site de IPES Verviers" href="https://fr-fr.facebook.com/IPESdeVerviers/"
+                       itemtype="legalName">IPES Verviers</a>
+                </li>
+                <li>
+                    <a title="aller vers le site de Maria-Goretti Sekundarschule" href="https://www.maria-goretti.be/"
+                       itemtype="legalName">Maria-Goretti Sekundarschule</a>
+                </li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="#"><img width="17" height="17" src="./img/icons8-facebook-f.svg" alt="icone de Facebook"></a>
+            <a href="#"><img width="17" height="17" src="./img/icons8-instagram.svg" alt="icone de Instagram"></a>
+            <a href="#"><img width="17" height="17" src="./img/icons8-youtube.svg" alt="icone de Youtube"></a>
+            <a href="#"><img width="17" height="17" src="./img/icons8-twitter.svg" alt="icone de Twitter"></a>
+        </div>
     </div>
-    <div class="externlinks">
-        <ul>
-            <li>
-                <a title="aller vers le site de la Haute Ecole de la Province de Liège" href="https://hepl.be/fr">Haute Ecole de la Province de Liège</a>
-            </li>
-            <li>
-                <a title="aller vers le site du Bachelier en Design Web de la Haute Ecole de la Province de Liège" href="https://hepl.be/fr/techniques-infographiques/web">Bachelier en Design Web</a>
-            </li>
-            <li>
-                <a title="aller vers le site de la Formation d'assistante pharmaceutico-technique" href="https://www.provincedeliege.be/fr/node/2449">Formation assistante en pharmacie</a>
-            </li>
-            <li>
-                <a title="aller vers le site de IPES Verviers" href="https://fr-fr.facebook.com/IPESdeVerviers/">IPES Verviers</a>
-            </li>
-            <li>
-                <a title="aller vers le site de Maria-Goretti Sekundarschule" href="https://www.maria-goretti.be/">Maria-Goretti Sekundarschule</a>
-            </li>
-        </ul>
-    </div>
-    <div class="réseaux-sociaux">
-        <a href="#"><img width="17" height="17" src="./img/icons8-facebook-f.svg" alt="icone de Facebook"></a>
-        <a href="#"><img width="15" height="15" src="./img/icons8-instagram.svg" alt="icone de Instagram"></a>
-        <a href="#"><img width="13.79" height="10.01" src="./img/icons8-youtube.svg" alt="icone de Youtube"></a>
-        <a href="#"><img width="18" height="18" src="./img/icons8-twitter.svg" alt="icone de Twitter"></a>
-    </div>
-    <p class="impressum">
-        © 2024 Lisa-Marie Kreins. Tous droits réservés.
+    <p class="impressum" itemscope itemtype="https://schema.org/Person">
+        © 2024 <span itemprop="givenName">Lisa-Marie</span> <span itemprop="familyName">Kreins</span>. Tous droits réservés.
     </p>
 </footer>
 </body>
 </html>
-
