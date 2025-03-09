@@ -14,7 +14,7 @@ html{
     font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif ;     /* à revoir! */
     font-size: 16px;
 }
-h3.sro, .skip-nav-sro{
+h3.sro, .skip-nav-sro, .sro{
     position: absolute;
     overflow: hidden;
     clip: rect(0 0 0 0);
@@ -28,9 +28,11 @@ h3.sro, .skip-nav-sro{
 
 /*!*----Texte----*!*/
 h1{
-/*    font-size: 30px;
-    font-weight: 700;*/
     display: inline;
+}
+h1 img{
+    margin-top: 26px;
+    margin-left: 24px;
 }
 p{
     font-size: 1em;         /*16px*/
@@ -62,6 +64,7 @@ footer{
     color: var(--white);
     padding-left: 24px;
 }
+
 
 
 /*----header----*/
@@ -120,6 +123,15 @@ section p{
 #moi p:last-of-type {
     margin-bottom: 40px;
 }
+
+
+/* --- version desktop---*/
+@media (min-width : 600px) and (max-width: 1199px ){
+
+}
+
+
+
 
 /*-monparcours-*/
 
@@ -193,6 +205,10 @@ main section{
     border-radius: 15px;
     width: 117px;   /* pour que width et height total = 155px */
     height: 117px;
+
+    /*display: inline-block;           jsp pq j'ai fait ça */
+
+
     /*Hover effect for display and shadow */
 
 }
@@ -203,7 +219,18 @@ main section{
 
 .languages-list a{
     height: 114px;
+
 }
+
+
+
+/*-caroussel images-*/
+.caroussel img{
+    border-radius: 17px;
+}
+/*.caroussel{
+     display: inline;
+ }*/
 
 /*------langages images-----*/
 .languages-list li img{
@@ -214,6 +241,7 @@ main section{
 .languages-list li img + img{
     margin-left: 17px;
 }
+
 
 
 /*-background images-*/
@@ -238,6 +266,7 @@ main section{
     z-index: 1;
 }
 
+
 .contactbutton{
     display: block;
     border: 2px solid var(--black);
@@ -254,6 +283,107 @@ main section{
 #monparcours .contactbutton{
     margin-bottom: 0;
 }
+
+
+
+/*-------navigation principale-------*/
+
+
+input#navigation{
+    margin: 0;
+    margin-right: 26px;
+    display: inline;
+    max-width: fit-content;                 /* JUSTE???*/
+}
+
+.nav-principale ul>li{
+    /*    font-family: 'Avenir Next', Helvetica, Arial, sans-serif;*/
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 210%;
+}
+.nav-principale ul>li ul>li{
+    font-weight: 400;
+    font-size: 16px;
+    color: #6C6C6C;
+    /*    line-height: 35px;*/
+    line-height: 210%;        /*----!!!!!! à vérifier comment on peut changer*/
+}
+.nav-principale{
+    padding: 25px 25px 28px;
+/*    border-bottom: 1px solid #D5D5D5;*/
+}
+.nav-principale ul>li ul>li{
+    padding-left: 25px;
+}
+.navigation-title{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    border: none;
+}
+.travailler-nav{
+    margin-bottom: 31px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #6C6C6C;
+}
+/*#navigation:checked+.navigation-list{
+    !*    display: none;*!
+    position: absolute;
+    text-indent: -999999px;
+}*/
+#navigation:checked+.header-content{
+    /*    display: none;*/
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    border: none;
+}
+#navigation:checked {
+    max-height: 72px;
+}
+
+/*----dropdowns-----*/
+.dropdown-category{
+    font-size: 24px;
+    margin-left: -7px;
+
+}
+.dropdown-category.firstcategory{
+    display: block;
+    margin-top: 48px;
+/*    border-top: 2px solid white;
+    max-width: calc(100vw - 48px);*/
+
+}
+
+.dropdown-category.lastcategory{
+    display: block;
+    padding-bottom: 26px;
+
+}
+.dropdowns ul li ul li{
+    padding-left: 8px;
+    padding-top: 24px;
+}
+
+.dropdowns ul li ul li:first-of-type{
+    padding-top: 26px;
+}
+.dropdowns ul li ul li:last-of-type{
+    padding-bottom: 60px;
+}
+
+
 
 
 /*----externlinks-----*/
@@ -333,6 +463,105 @@ main section{
 
 
 
+
+/*------Caroussel-------*/
+
+.caroussel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*    height: 100vh;*/
+    /* background-color: #f4f4f4;*/
+}
+
+.carousel {
+    position: relative;
+    width: 90vw;
+    overflow-x: clip;
+    /* overflow: hidden; *!!
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 1 0 100%;
+    padding: 0 6px; /* padding entre les images*/
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Radio-Buttons verstecken */
+input[type="radio"] {
+    display: none;
+}
+
+/* Navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 23px;
+}
+
+.carousel-nav label {
+    width: 15px;
+    height: 15px;
+    background: #aaa;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 66px;
+}
+
+.carousel-nav label:hover {
+    background: #666;
+}
+
+/* CSS Magie: Wechsel der Bilder durch Radio-Buttons */
+#slide1:checked ~ .carousel-images {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .carousel-images {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .carousel-images {
+    transform: translateX(-200%);
+}
+.slideshow{
+    margin-top: 23px;
+    padding-bottom: 0;
+}
+.slideshow h2{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+/* noch richtig machen */
+h2.profession{             /*richtiger h2*/
+    position: absolute;
+    top: 683px;
+    text-align: center;
+    min-width: calc(100vw - 48px);
+    min-height: 28px;
+    margin-bottom: 0;
+    /*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*/
+}
 
 
 .externlinks{
