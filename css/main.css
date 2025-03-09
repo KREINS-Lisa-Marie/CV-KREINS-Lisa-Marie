@@ -130,7 +130,125 @@ section p{
 
 }
 
+@media (min-width : 1200px){
+    /* texte sur moi*/
+    #moi{
+        margin-left: calc(50.9269356597601%);
+        margin-right: calc(17.6117775354417%);
+        min-width: calc(577px - 69px - 84px);       /* bonne façon??*/
+        max-width: calc(577px - 69px - 84px);
+        min-height: 442px;
+        padding-top: 76px;
+        padding-left: 69px;
+        padding-right: 84px;
+        padding-bottom: 68px;
 
+    }
+    #moi p{
+        line-height: 26px;
+    }
+    #moi p:last-of-type{
+        margin-top: 34px;
+        margin-bottom: 140px;
+    }
+    #moi .contactbutton, #monparcours .contactbutton{
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 346px;
+    }
+    img.backgroundimage:first-of-type{
+        position: relative;
+        margin-top: -502px;
+        z-index: 1;
+        margin-right: calc(45.36532170119956%);
+        margin-left: calc(17.6117775354417%);
+        min-width: 680px;
+        max-width: 680px;
+    }
+
+    /* texte mon parcours */
+    #monparcours ul{
+        margin-bottom: 140px;
+    }
+    #monparcours{
+        margin-right: calc(50.9269356597601%);
+        margin-left: calc(17.6117775354417%);
+        min-width: calc(577px - 68px - 108px);       /* bonne façon??*/
+        margin-bottom: 0;
+        max-width: calc(577px - 68px - 108px);
+        min-height: 441px;
+        padding-top: 77px;
+        padding-bottom: 68px;               /* espace bizzarrre en dessous */
+        padding-left: 68px;
+        padding-right: 108px;
+    }
+
+     img.backgroundimage:last-of-type{
+         position: relative;
+         margin-top: -502px;
+         z-index: 1;
+         margin-left: calc(45.36532170119956%);
+         margin-right: calc(17.6117775354417%);
+         min-width: calc(679px - 22px - 25px);
+         max-width: calc(679px - 22px - 25px);
+     }
+
+     /* langages*/
+    .languages-list{
+        max-height: 600px;                                            /* pq seulement 600 marche???*/
+        max-width: 884px /*100vw*/;                             /*     !!!!!! a changer !!!!!!   */
+        min-width: 884px;
+        display: flex;
+        flex-direction: row;
+        column-gap: 17px;
+        flex-wrap: wrap;
+        text-align: center;                                  /* est-ce que je peux enlever ici ????*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .languages-list .languages-element{
+        margin-left: 0;
+        /* margin-right: 1em; non car ici utilisé gap */
+        margin-bottom: 16px; /*1em*/
+        padding: 30px;                                            /* à vérifier */
+        background-color: var(--white);
+        border-radius: 15px;
+        min-width: 211px;   /* pour que width et height total = 271px */
+        min-height: 211px;
+        /*Hover effect for display and shadow */
+
+    }
+    .languages-list .languages-element img{
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 211px;                   /* JUSTE???*/
+        height: 211px;
+    }
+
+    .competences{
+
+        max-width: 347px;           /*oder besser so? */
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+    #competences{
+        margin-bottom: 129px;
+    }
+
+    /* début footer*/
+    .logo-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;              /* à vérifier les espaces autour*/
+    }
+    .premiercontactfooter{
+        min-width: 242px;
+        max-height: 19.74px;
+    }
+
+}
 
 
 /*-monparcours-*/
@@ -205,11 +323,7 @@ main section{
     border-radius: 15px;
     width: 117px;   /* pour que width et height total = 155px */
     height: 117px;
-
-    /*display: inline-block;           jsp pq j'ai fait ça */
-
-
-    /*Hover effect for display and shadow */
+/*Hover effect for display and shadow */
 
 }
 .languages-list li:last-of-type{
@@ -220,8 +334,8 @@ main section{
 .languages-list a{
     height: 114px;
 
-}
 
+}
 
 
 /*-caroussel images-*/
@@ -266,6 +380,8 @@ main section{
     z-index: 1;
 }
 
+
+/*------Bouton contact--------*/
 
 .contactbutton{
     display: block;
@@ -332,11 +448,7 @@ input#navigation{
     font-weight: 600;
     color: #6C6C6C;
 }
-/*#navigation:checked+.navigation-list{
-    !*    display: none;*!
-    position: absolute;
-    text-indent: -999999px;
-}*/
+
 #navigation:checked+.header-content{
     /*    display: none;*/
     position: absolute;
@@ -390,9 +502,7 @@ input#navigation{
 .externlinks li:not(:first-child){
     padding-top: 24px;
 }
-/*.externlinks li:first-child{
-    padding-top: 37px;
-}*/
+
 .externlinks ul{
     padding-top: 37px;
     padding-bottom: 37px;
@@ -465,6 +575,8 @@ input#navigation{
 
 
 /*------Caroussel-------*/
+
+
 
 .caroussel {
     display: flex;
@@ -562,7 +674,6 @@ h2.profession{             /*richtiger h2*/
     margin-bottom: 0;
     /*    font-family: 'Montserrat Alternates', 'Arial rounded', sans-serif;*/
 }
-
 
 .externlinks{
     display: grid;
